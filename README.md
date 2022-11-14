@@ -6,7 +6,7 @@
 <img alt="PostgreSQL" width="150" src="./github/vue_3.png" alt="VUE logo">
 </p>
 
-## Featuresa
+## Features
 
 > Using Core PHP, MySQL and Vuejs 3, implemented a system to create font groups. That is a one-page solution without reloading.
 > 
