@@ -12,12 +12,11 @@
 > 
 > Matching result is cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) do not query database before cache expires. 
 > 
-> If user changes filter parameters, Redis cache for old results are can invalidated.
-> 
-> Displaying the users in a paginated table, with 20 rows per page. Pagination retrieves data from Redis cache if it is available.
-> 
-> Page number is not part of the cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieves only the required rows from Redis. 
-> Unit and Feature Testing implemented.
+> - [x] Font can uploading without a Button and uploading only the TTF file extension.
+> - [x] Shown the Uploaded Font List.
+> - [x] Making a Font Group with multiple fonts. On load, just one Field has there. After clicking Add Row, another row is added.  You must have to select two fonts If you want to create a group.
+> - [x] Shown the list of All Font Group. Edit and Delete that Font Group. 
+
 
 
 ## Local Installation
