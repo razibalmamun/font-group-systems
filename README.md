@@ -10,8 +10,6 @@
 
 > Using Core PHP, MySQL and Vuejs 3, implemented a system to create font groups. That is a one-page solution without reloading.
 > 
-> Matching result is cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) do not query database before cache expires. 
-> 
 > - [x] Font can uploading without a Button and uploading only the TTF file extension.
 > - [x] Shown the Uploaded Font List.
 > - [x] Making a Font Group with multiple fonts. On load, just one Field has there. After clicking Add Row, another row is added.  You must have to select two fonts If you want to create a group.
