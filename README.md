@@ -32,9 +32,10 @@ Clone the repository in your local machine using `git clone https://github.com/r
 
 1.  Open `api/app/DB/MySQL.php` file from inside the `project folder` folder
 2.  update `MySQL.php` file database information according to your local machine.
-4.  Go to `apps` folder and Open terminal/command promt from inside the `project folder` folder
+3.  Go to `apps` folder and Open terminal/command promt from inside the `project folder` folder
+4.  run command `npm install` 
 5.  run command `npm run dev`
-7.  Now it's ready to browse. Just open your browser and enter `http://127.0.0.1:5173/`
+6.  Now it's ready to browse. Just open your browser and enter `http://127.0.0.1:5173/`
 
 ## Development Features
 -   PHP part
