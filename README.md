@@ -1,16 +1,14 @@
-# Data Filtering System Using  Laravel, PostgreSQL & Redis
+# Font Group System Using Core PHP, MySQL and JS (Vuejs 3)
 
-<p align="center"><a href="https://laravel.com" target="_blank">
-<img src="./github/laravel.svg" width="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img width="250" src="./github/redis.png" alt="Redis logo"></a>
-<a href="https://www.postgresql.org/" target="_blank">
-      <img alt="PostgreSQL" width="80" src="./github/postgresql.png">
-    </a>
+<p align="center">
+<img src="./github/php.png" width="150" alt="PHP logo"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="200" src="./github/mysql.png" alt="MySQL logo"></a>
+<img alt="PostgreSQL" width="150" src="./github/vue_3.png" alt="VUE logo">
 </p>
 
 ## Featuresa
 
-> Using Laravel, PostgreSQL, and Redis, implemented a system that allows filtering the attached dataset by person's birth year, or birth month. or both.
+> Using Core PHP, MySQL and Vuejs 3, implemented a system to create font groups. That is a one-page solution without reloading.
 > 
 > Matching result is cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) do not query database before cache expires. 
 > 
