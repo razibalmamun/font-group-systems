@@ -1,4 +1,4 @@
-# Font Group System Using Core PHP, MySQL and JS (Vuejs 3)
+## <div align="center">Font Group System Using Core PHP, MySQL & JS (Vuejs 3)</div>
 
 <p align="center">
 <img src="./github/php.png" width="150" alt="PHP logo"></a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -21,13 +21,12 @@
 
 ## Local Installation
 
-Clone the repository in your local machine using `git clone https://github.com/razibalmamun/data-filtering-system.git`
+Clone the repository in your local machine using `git clone https://github.com/razibalmamun/font-group-systems.git`
 
 ### Requirements for Local Environment
 
 -   [x] PHP Version 7.4 | 8.1
--   [x] PostgreSQL Version 13.2-2
--   [x] Redis Server Version 3.0.504
+-   [x] Node Version 16.13.0
 
 ### Redis on Laragon
 Redis is no longer supported in Windows, but the version 3.2.1 is still available to use [(ref)](https://redis.com/blog/redis-on-windows-8-1-and-previous-versions/#:~:text=Officially%2C%20Redis%20is%20not%20supported,ported%20to%20Windows%20by%20MSOpenTech.), so that's why laragon contains version 3.* only.
