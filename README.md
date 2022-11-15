@@ -10,10 +10,10 @@
 
 > Using Core PHP, MySQL and Vuejs 3, implemented a system to create font groups. That is a one-page solution without reloading.
 > 
-> - [x] Font can uploading without a Button and uploading only the TTF file extension.
-> - [x] Shown the Uploaded Font List.
-> - [x] Making a Font Group with multiple fonts. On load, just one Field has there. After clicking Add Row, another row is added.  You must have to select two fonts If you want to create a group.
-> - [x] Shown the list of All Font Group. Edit and Delete that Font Group. 
+> - [x] Font can be uploaded without a Button and  only with the TTF file extension.
+> - [x] Show the Uploaded Font List.
+> - [x] Make a Font Group with multiple fonts. On load, just one field will be  there. After clicking Add Row, another row will be added.  You must have to select two fonts If you want to create a group.
+> - [x] Show the list of All Fonts Group. Edit and Delete those Fonts Group. 
 
 
 
