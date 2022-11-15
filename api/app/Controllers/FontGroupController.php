@@ -1,28 +1,28 @@
 <?php
-class FontGroupController
+class FontGroupController extends Controller
 {
     private $fontGroup;
     public function __construct() {
-        $this->fontGroup = new FontGroupModel(new JsonPrint());
+        $this->fontGroup = new FontGroupModel();
     }
 
     public function index(){
-        echo $this->fontGroup->getFontGroups();
+        echo $this->response($this->fontGroup->getAll());
     }  
     
     public function save() {
-        echo $this->fontGroup->insert();
+        echo $this->response($this->fontGroup->insert());
     }
 
     public function edit($id) {
-        echo $this->fontGroup->findById($id);
+        echo $this->response($this->fontGroup->findById($id));
     }
 
     public function update($id) {
-        echo $this->fontGroup->update($id);
+        echo $this->response($this->fontGroup->update($id));
     }
 
     public function delete($id) {
-        echo $this->fontGroup->delete($id);
+        echo $this->response($this->fontGroup->delete($id));
     }
 }

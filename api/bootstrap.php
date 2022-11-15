@@ -5,14 +5,13 @@ include './app/DB/DBConnection.php';
 
 include './app/Interface/FontOperation.php';
 include './app/Interface/FontGroupOperation.php';
-include './app/Interface/PrintResponse.php';
 include './app/Interface/Upload.php';
 
-include './app/Trait/UploadFont.php';
+include './app/Trait/CommonResponse.php';
 
 include './app/Models/FontModel.php';
 include './app/Models/FontGroupModel.php';
-include './app/Classes/JsonPrint.php';
+include './app/Controllers/Controller.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials: true ");

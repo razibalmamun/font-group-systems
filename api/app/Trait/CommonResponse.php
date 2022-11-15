@@ -1,10 +1,7 @@
 <?php
-/**
- * 
- */
-trait UploadFont 
+trait CommonResponse 
 {
-    public function doUpload() {
+    public function upload() {
         $targetDir = "./uploads/";
         $fileName = basename(str_replace([' '], '-', $_FILES["selectedFiles"]["name"]));
         $originalFileName = basename($_FILES["selectedFiles"]["name"]);
@@ -35,5 +32,27 @@ trait UploadFont
         }
         $data['status'] = $uploadOk;
         return $data;
+    }
+
+    public function sanitizeData($data) {
+        $trimmed_data    = trim($data);
+        $str_splash_data = stripslashes($trimmed_data);
+        $html_chars_data = htmlspecialchars($str_splash_data);
+        return $html_chars_data;
+    }
+
+    public function getFontStyle($fontFile) {
+        $font = './uploads/'.$fontFile;
+
+        $image = imagecreate(120,20);
+        $black = imagecolorallocate($image, 255,255,255);
+        $white = ImageColorAllocate($image, 0, 0, 0);
+
+        $size = 10;
+
+        imagettftext($image, $size, 0, 10, 14, $white, $font, "Example Style");
+        header("content-type: image/png");
+        imagepng($image);
+        imagedestroy($image);
     }
 }

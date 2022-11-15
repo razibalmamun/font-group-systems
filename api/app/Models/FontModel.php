@@ -1,37 +1,27 @@
 <?php
 class FontModel extends DBConnection implements FontOperation
 {
-    use UploadFont;
+    use CommonResponse;
     private $conn;
-    private $print;
 
     //Table Name
     private $table_name = "fonts";
 
-    public function __construct(PrintResponse $printResponse) {
+    public function __construct() {
         $this->conn = $this->connect(new MySQL());
-        $this->print = $printResponse;
     }
 
     public function insert($request) {
-        $data = $this->doUpload();
+        $data = $this->upload();
 
         $this->conn->beginTransaction();
         if($data['status']) {
             try {
                 $db_query = "INSERT INTO  ". $this->table_name . " (font_file_name, font_original_file_name, created_at) VALUES(:file_name, :original_file_name, :created_at)";    
                 $statement = $this->conn->prepare($db_query);
-    
-                //Function to filter the form input
-                function sanitize_data($data) {
-                    $trimmed_data    = trim($data);
-                    $str_splash_data = stripslashes($trimmed_data);
-                    $html_chars_data = htmlspecialchars($str_splash_data);
-                    return $html_chars_data;
-                }
-    
-                $fileName    = sanitize_data($data['font_file_name']);
-                $originalFileName   = sanitize_data($data['font_original_file_name']);
+
+                $fileName    = $this->sanitizeData($data['font_file_name']);
+                $originalFileName   = $this->sanitizeData($data['font_original_file_name']);
                 $createdDate = date('Y-m-d H:i:s');
     
                 $statement->bindParam(':file_name', $fileName, PDO::PARAM_STR);
@@ -46,10 +36,10 @@ class FontModel extends DBConnection implements FontOperation
                 $this->conn->rollBack();
             } 
         }
-        return $this->print->res($data);
+        return $data;
     }
 
-    public function getFonts(){
+    public function getAll(){
         $db_query  = "SELECT *FROM " . $this->table_name . " ORDER BY id DESC";
         $statement = $this->conn->query($db_query) or die("failed!");
 
@@ -60,7 +50,7 @@ class FontModel extends DBConnection implements FontOperation
 
         $data['status'] = 1;
         $data['fonts']  =   $fonts;
-        return $this->print->res($data);
+        return $data;
     }
 
     //Delete Data from Database
@@ -89,6 +79,6 @@ class FontModel extends DBConnection implements FontOperation
             $data['message'] = "Error Message: " . $e->getMessage();
             $data['status'] = 0;
         } 
-        return $this->print->res($data);
+        return $data;
     }
 }

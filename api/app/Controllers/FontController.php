@@ -1,20 +1,20 @@
 <?php
-class FontController
+class FontController extends Controller
 {
     private $font;
     public function __construct() {
-        $this->font = new FontModel(new JsonPrint());
+        $this->font = new FontModel();
     }
 
     public function index(){
-        echo $this->font->getFonts();
+        echo $this->response($this->font->getAll());
     }  
     
     public function doUpload() {
-        echo $this->font->insert([]);
+        echo $this->response($this->font->insert([]));
     }
 
     public function delete($id) {
-        echo $this->font->delete($id);
+        echo $this->response($this->font->delete($id));
     }
 }

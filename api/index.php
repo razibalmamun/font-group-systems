@@ -1,5 +1,5 @@
 <?php
-include './main.php';
+include './bootstrap.php';
 
 $url = isset($_GET['url']) ? $_GET['url'] : false;
 if($url) {
