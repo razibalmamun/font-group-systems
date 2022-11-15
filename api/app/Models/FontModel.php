@@ -1,5 +1,5 @@
 <?php
-class FontModel extends DBConnection implements FontOperation
+class FontModel extends DBConnection implements FontOperation, FontStyle
 {
     use CommonResponse;
     private $conn;
@@ -80,5 +80,9 @@ class FontModel extends DBConnection implements FontOperation
             $data['status'] = 0;
         } 
         return $data;
+    }
+
+    public function getFontStyle($fontFile) {
+        $this->fontStyle($fontFile);
     }
 }

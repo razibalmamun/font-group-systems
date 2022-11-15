@@ -41,16 +41,16 @@ trait CommonResponse
         return $html_chars_data;
     }
 
-    public function getFontStyle($fontFile) {
-        $font = './uploads/'.$fontFile;
-
-        $image = imagecreate(120,20);
+    public function fontStyle($fontFile) {
+        $font = realpath('uploads/'.$fontFile);
+        
+        $image = imagecreate(140,20);
         $black = imagecolorallocate($image, 255,255,255);
         $white = ImageColorAllocate($image, 0, 0, 0);
 
-        $size = 10;
+        $size = 12;
 
-        imagettftext($image, $size, 0, 10, 14, $white, $font, "Example Style");
+        imagettftext($image, $size, 0, 9, 15, $white, $font, "Example Style");
         header("content-type: image/png");
         imagepng($image);
         imagedestroy($image);

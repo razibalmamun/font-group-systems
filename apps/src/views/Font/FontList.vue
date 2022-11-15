@@ -43,7 +43,14 @@
         <tr v-for="(font, key) in fonts" :key="key">
           <th scope="row">{{ font.id }}</th>
           <td>{{ font.font_original_file_name }}</td>
-          <td><div :class="'example-style' + font.id">Example Style</div></td>
+          <td>
+            <img
+              alt="Example Style"
+              class="logo"
+              :src="base_url + 'font/fontstyle/' + font.font_file_name"
+              width="125"
+            />
+          </td>
           <td>
             <button
               v-on:click="deleteRow(font.id, key)"
@@ -80,10 +87,12 @@ export default {
   data() {
     return {
       fonts: [],
+      base_url: "",
     };
   },
   created() {
     this.getFonts();
+    this.base_url = import.meta.env.VITE_BASEURL;
   },
   methods: {
     getFonts() {

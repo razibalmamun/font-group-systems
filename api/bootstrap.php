@@ -6,6 +6,7 @@ include './app/DB/DBConnection.php';
 include './app/Interface/FontOperation.php';
 include './app/Interface/FontGroupOperation.php';
 include './app/Interface/Upload.php';
+include './app/Interface/FontStyle.php';
 
 include './app/Trait/CommonResponse.php';
 

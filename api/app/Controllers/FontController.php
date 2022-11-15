@@ -17,4 +17,8 @@ class FontController extends Controller
     public function delete($id) {
         echo $this->response($this->font->delete($id));
     }
+
+    public function fontstyle($fontFile) {
+        $this->font->fontStyle($fontFile);
+    }
 }
